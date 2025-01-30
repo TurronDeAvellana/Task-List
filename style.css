@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1e2f; /* Fondo oscuro */
+}
+
+.container{
+    width: 600px;
+    height: 500px;
+    background-color: #d6d3f9;  
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    
+
+}
+    
+.topContainer{           
+    padding: 5px;          
+}   
+
+.generalContainer{
+    display: flex;
+    flex-direction: row;
+    margin: 10px;           /* Espaciado opcional entre los elementos internos */
+    padding: 20px;          /* Relleno interno de los elementos */
+    background-color: white ; /* Color de fondo opcional para los elementos internos */
+    border: 1px solid black; 
+}
+
+.verticalContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;           /* Espaciado opcional entre los elementos internos */
+    padding: 20px;          /* Relleno interno de los elementos */
+    background-color: white ; /* Color de fondo opcional para los elementos internos */
+    border: 1px solid black; 
+
+
+}
+.horizontalContainer{
+
+    display: flex;
+    flex-direction: row;
+            /* Relleno interno de los elementos */
+    /* Color de fondo opcional para los elementos internos */
+   
+}
+
+
+
+
+
+
+
+
+
