@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
+<script src="script.js" defer></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,15 +21,16 @@
 
                     <div class = "horizontalContainer"> <!-- an horizontal flex box just to simple things -->
                         <label for = "name"> Name   </label>
-                        <input type="text" >
+                        <input type="text" id = "taskName">  <!-- the id is to identify with JS  -->
                     </div>
 
                     <div class = "horizontalContainer"> <!-- an horizontal flex box just to simple things -->
-                        <label for = "time"> Text   </label>
-                        <input type="text">
+                        <label for = "time"> Time   </label>
+                        <input type="text" id = "taskTime"> <!-- the id is to identify with JS  -->
                     </div>
 
-                    <button type="button"> Save </button>
+                    <button type="button" id = "saveTaskB"> Save </button>
+                    <input type = "text" id="show">
                     
 
                     
@@ -38,8 +41,8 @@
                     <h4> Add a break</h4>
 
                     <div class = "horizontalContainer"> <!-- an horizontal flex box just to simple things -->
-                        <label for = "time"> Text   </label>
-                        <input type="text">
+                        <label for = "time"> Time   </label>
+                        <input type="text" >
                     </div>
 
                     <button type="button"> Save </button>
