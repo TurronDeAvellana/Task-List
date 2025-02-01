@@ -18,36 +18,43 @@ function addTask(){
     let taskName = document.getElementById("taskName").value;
     let taskTime = document.getElementById("taskTime").value;
 
-    //Create a new task object
-    const newTask = new Task(taskName, taskTime);
+    if (taskName == "" || taskTime == "" || isNaN(taskTime) || taskTime <= 0) {
+        alert("Please enter a valid task name and time");
+    } else {
+        // Create a new task object
+        const newTask = new Task(taskName, taskTime);
 
+        let newInput = document.createElement("input");
+        newInput.type = "text";
+        newInput.value = newTask.taskName + " / " + newTask.taskTime;
 
-    let newInput = document.createElement("input");
-    newInput.type = "text";
-    newInput.value = newTask.taskName + " / " + newTask.taskTime;
+        // Delete button
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("delete-btn");
 
-    //Append the input to the target div
-    targetDiv.appendChild(newInput);
+        // Delete button event listener
+        deleteBtn.addEventListener("click", function () {
+            targetDiv.removeChild(newInput); // Remove the task input from the div
+            targetDiv.removeChild(deleteBtn); // Remove the delete button from the div
+        });
 
-    //Clear the input fields
-    document.getElementById("taskName").value = "";
-    document.getElementById("taskTime").value = "";
+        // Append the input to the target div
+        targetDiv.appendChild(newInput);
 
-    document.getElementById("show").addEventListener("click", createInputField);
+        // Append the delete button to the target div
+        targetDiv.appendChild(deleteBtn);
 
+        // Clear the input fields
+        document.getElementById("taskName").value = "";
+        document.getElementById("taskTime").value = "";
+
+        document.getElementById("show").addEventListener("click", createInputField);
+    }
 }
 
 
 
-/*
-//This function takes the parameters from the input 
-function addTask() {
-    let taskName = document.getElementById("taskName").value;
-    let taskTime = document.getElementById("taskTime").value;
-    
-    const newTask = new Task(taskName, taskTime);
 
-    document.getElementById("showTasks").value = newTask.taskName + " / " + newTask.taskTime;
-}
 
-*/
+
