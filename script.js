@@ -1,5 +1,7 @@
 document.getElementById("saveTaskB").addEventListener("click", addTask);  
 document.getElementById("saveBreak").addEventListener("click", addBreak);
+document.getElementById("next").addEventListener("click",nextButton);
+document.getElementById("toMain").addEventListener("click",toMainPage);
 
 
 
@@ -19,11 +21,10 @@ function addTask(){
     if (taskName == "" || isNaN(taskName) == false || taskTime == "" || isNaN(taskTime) || taskTime <= 0) {
         alert("Please enter a valid task name and time");
     } else {
-        // Create a new task object
         
-
         let newInput = document.createElement("input");
         newInput.type = "text";
+        newInput.readOnly = true; // Make the input field non editable 
         newInput.value = taskName + " / " + taskTime;
 
         // Delete button
@@ -60,7 +61,7 @@ function addBreak(){
     //Get the values from the input fields
     let breakTime = document.getElementById("breakTime").value;
 
-    if (breakTime > 0 && !isNaN(breakTime)  && breakTime == "") {
+    if (breakTime > 0) {
         let newInput = document.createElement("input");
         newInput.type = "text";       
         newInput.value = "break" + " / " + breakTime;
@@ -92,6 +93,30 @@ function addBreak(){
         alert("Please enter a valid break time ")
     }
 }
+
+//Buttom next function 
+
+function nextButton(){
+
+   // Save information to localStorage
+    let tasks = [];
+    let taskContainer = document.getElementById("taskContainer");
+    let inputs = taskContainer.getElementsByTagName("input");
+
+    for (let input of inputs) {
+        tasks.push(input.value);
+    }
+
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+
+
+    //to the other page 
+    window.location.href = "timerList.html";
+
+
+}
+
+
 
 
 
