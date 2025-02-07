@@ -27,8 +27,3 @@ CREATE TABLE User(
     password VARCHAR(50) NOT NULL,
     TaskListName VARCHAR(50) FOREIGN KEY REFERENCES TaskList(taskListName)
 )
-CREATE TABLE Task_TaskList(
-    taskName VARCHAR(50) FOREIGN KEY REFERENCES Task(taskName),
-    taskListName VARCHAR(50) FOREIGN KEY REFERENCES TaskList(taskListName),
-    PRIMARY KEY (taskName, taskListName)
-);
